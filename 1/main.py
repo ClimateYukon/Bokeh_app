@@ -45,12 +45,14 @@ def update_plot(attrname, old, new):
     rcp85 = rcp85_select.value
 
     source = get_dataset(dic,[rcp45 ,rcp85])
-    print(source)
+    print(source) # <- gets updated properly after dropdown action
 
 rcp45 = 'CCSM4_rcp45'
 rcp85 = 'CCSM4_rcp85'
 
-dic = pickle.load(open(os.path.join(base_path , "_".join([domain , metric ]) + '.p'), 'rb'),encoding='latin1')
+# dic = pickle.load(open(os.path.join(base_path , "_".join([domain , metric ]) + '.p'), 'rb'),encoding='latin1')
+
+dic = pickle.load(open('IEM_Domain_total_area_burned.p', 'rb'),encoding='latin1')
 
 rcp45_models = [ i for i in dic.keys() if 'rcp45' in i]
 rcp85_models = [ i for i in dic.keys() if 'rcp85' in i]
